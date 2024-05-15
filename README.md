@@ -8,7 +8,7 @@
  * php artisan migrate
  * php artisan key:generate
  * php artisan serve
- 1 open a new command terminal and type
+ * open a new command terminal and type
  * npm install
  * npm run dev
 
