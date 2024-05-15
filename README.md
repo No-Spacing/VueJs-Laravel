@@ -3,13 +3,14 @@
  Simple login, register page with middleware
  
 # Setting up
- composer update
- (rename env.example to env)
- php artisan migrate
- php artisan key:generate
- php artisan serve
- npm install
- npm run dev
+ * composer update
+ * (rename env.example to env)
+ * php artisan migrate
+ * php artisan key:generate
+ * php artisan serve
+ 1 open a new command terminal and type
+ * npm install
+ * npm run dev
 
 # Screenshots
  ![Alt text](https://github.com/No-Spacing/VueJs-Laravel/blob/main/screenshots/sc1.png)
