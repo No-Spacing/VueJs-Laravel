@@ -46,7 +46,6 @@
                         </v-list-item>
                     </v-list>
                 </v-menu>
-                
             </template>
         </v-app-bar>
     </v-layout>
