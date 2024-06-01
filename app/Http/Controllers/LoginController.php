@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use App\Models\User;
 
 class LoginController extends Controller
 {
@@ -14,15 +17,15 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:6'
         ]);
-
-        if ($credentials) {
-            $request->session()->put('UserCheck', 1);
-            return redirect()->intended('dashboard');
+        
+        if (Auth::attempt($credentials)) {
+            $request->session()->put('UserCheck', 1 );
+            return redirect('dashboard');
         }
 
         return back()->with([
             'message' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+        ]);
     
     }
     public function logout(Request $request) {

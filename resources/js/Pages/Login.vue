@@ -57,11 +57,15 @@
                     type="password"
                     :error-messages="form.errors.password"
                     ></v-text-field>
+                    
                     <div
-                    class="d-flex justify-end pb-3"
+                    class="d-flex justify-space-between"
                     >
-                        <a href="#">Forgot Password</a>
+                        <v-checkbox label="Remember Me"></v-checkbox>
                     </div>
+                    
+
+                    
 
                     <div class="d-flex flex-column justify-center">
                         <v-btn 
@@ -71,10 +75,12 @@
                         block>
                             Submit
                         </v-btn>
-                        <div class="text-center">
-                            <span> or </span>
+                        <div class="d-flex align-center justify-space-between py-3">
+                            <a  href="/register" block>Register</a>
+                            <a href="#">Forgot Password</a>
                         </div>
-                        <v-btn class="my-3" href="/register" block>Register</v-btn>
+                        
+                        
                     </div>
                 </v-form>
             </v-sheet>
