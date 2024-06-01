@@ -5,6 +5,18 @@
         email: null,
         password: null,
     })
+    function submit() {
+        form.post('/registerPost', {
+            preserveScroll: true,
+            onSuccess: () => {
+                form.reset()
+                alert('Successfully Registered')
+            },
+            onError: () => {
+                form.reset('password')
+            },
+        })
+    }
 </script>
 
 <template>
@@ -25,7 +37,7 @@
 
         <v-card-text>
             <v-sheet class="mx-auto" width="300">
-                <v-form @submit.prevent="form.post('/registerPost')">
+                <v-form @submit.prevent="submit()">
                     <v-text-field
                     v-model="form.name"
                     label="Name"
