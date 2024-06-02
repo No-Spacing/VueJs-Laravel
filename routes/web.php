@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,7 +21,7 @@ Route::group(['middleware'=>['UserCheck']], function(){
     Route::inertia('/login', 'Login')->name('login');
     Route::inertia('/register', 'Register')->name('register');
 
-    Route::inertia('/dashboard', 'Dashboard')->name('dashboard');
+    Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
 
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     
