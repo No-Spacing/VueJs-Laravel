@@ -12,7 +12,7 @@ import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import Layout from './Layout/App.vue'
+
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
@@ -27,10 +27,8 @@ const vuetify = createVuetify({
 createInertiaApp({
     resolve: name => {
         const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
-        let page = pages[`./Pages/${name}.vue`]
-        page.default.layout = page.default.layout || Layout
-        return page
-    },
+        return pages[`./Pages/${name}.vue`]
+      },
     setup({ el, App, props, plugin }) {
         createApp({ render: () => h(App, props) })
         .use(vuetify)
