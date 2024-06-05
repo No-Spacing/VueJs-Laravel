@@ -24,12 +24,11 @@
     >
         <v-card-item>
             <v-card-title>
-            Login
+                Login
             </v-card-title>
 
             <v-card-subtitle>
-            Please type your correct login data.
-            
+                Please type your correct login data.   
             </v-card-subtitle>
         </v-card-item>
 
@@ -51,6 +50,7 @@
                     type="email"
                     :error-messages="form.errors.email"
                     ></v-text-field>
+                    
                     <v-text-field
                     v-model="form.password"
                     label="Password"
@@ -63,24 +63,18 @@
                     >
                         <v-checkbox label="Remember Me"></v-checkbox>
                     </div>
-                    
-
-                    
 
                     <div class="d-flex flex-column justify-center">
                         <v-btn 
-                        class="my-3" 
                         type="submit" 
                         :disabled="form.processing"
                         block>
                             Submit
                         </v-btn>
-                        <div class="d-flex align-center justify-space-between py-3">
-                            <a  href="/register" block>Register</a>
+                        <div class="d-flex align-center justify-space-between py-5">
+                            <a href="/register">Register</a>
                             <a href="#">Forgot Password</a>
                         </div>
-                        
-                        
                     </div>
                 </v-form>
             </v-sheet>
