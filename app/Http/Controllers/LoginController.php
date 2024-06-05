@@ -17,9 +17,13 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:6'
         ]);
-        
-        if (Auth::attempt($credentials)) {
-            $request->session()->put('UserCheck', 1 );
+
+        $validate = DB::table('users') 
+                    ->where('email', $request->email)
+                    ->first();
+
+        if ($validate && Hash::check($request->password, $validate->password)) {
+            $request->session()->put('UserCheck', $validate->id);
             return redirect('dashboard');
         }
 
