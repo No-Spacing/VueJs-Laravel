@@ -17,7 +17,8 @@ Route::post('/loginPost', [LoginController::class, 'loginPost']);
 Route::post('/registerPost', [RegisterController::class, 'registerPost']);
 
 
-Route::group(['middleware'=>['UserCheck']], function(){
+Route::group(['middleware' => ['UserCheck']], function(){
+    
     Route::inertia('/login', 'Login')->name('login');
     Route::inertia('/register', 'Register')->name('register');
 
