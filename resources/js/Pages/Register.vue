@@ -4,6 +4,7 @@
         name: null,
         email: null,
         password: null,
+        password_confirmation: null,
     })
     function submit() {
         form.post('/registerPost', {
@@ -13,7 +14,7 @@
                 alert('Successfully Registered')
             },
             onError: () => {
-                form.reset('password')
+                form.reset('password','password_confirmation')
             },
         })
     }
@@ -55,6 +56,13 @@
                     <v-text-field
                     v-model="form.password"
                     label="Password"
+                    type="password"
+                    :error-messages="form.errors.password"
+                    ></v-text-field>
+
+                    <v-text-field
+                    v-model="form.password_confirmation"
+                    label="Re-Type Password"
                     type="password"
                     :error-messages="form.errors.password"
                     ></v-text-field>
