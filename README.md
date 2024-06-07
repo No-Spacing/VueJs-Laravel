@@ -15,3 +15,4 @@
 # Screenshots
  ![Alt text](https://github.com/No-Spacing/VueJs-Laravel/blob/main/screenshots/sc1.png)
  ![Alt text](https://github.com/No-Spacing/VueJs-Laravel/blob/main/screenshots/sc2.png)
+ ![Alt text](https://github.com/No-Spacing/VueJs-Laravel/blob/main/screenshots/sc3.png)
