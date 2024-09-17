@@ -22,7 +22,9 @@ Route::group(['middleware' => ['UserCheck']], function(){
     Route::inertia('/login', 'Login')->name('login');
     Route::inertia('/register', 'Register')->name('register');
 
-    Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+    Route::get('/home', [UserController::class, 'home'])->name('home');
+
+    Route::inertia('/about','About')->name('about');
 
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     

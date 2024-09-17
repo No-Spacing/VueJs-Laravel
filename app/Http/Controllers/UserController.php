@@ -8,8 +8,8 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function dashboard(){        
+    public function home(){        
 
-        return Inertia::render('Dashboard', ['auth.user' => User::where('id', session('UserCheck'))->first()]);
+        return Inertia::render('Home', ['auth.user' => User::where('id', session('UserCheck'))->first()]);
     }
 }

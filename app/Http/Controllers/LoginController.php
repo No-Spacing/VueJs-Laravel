@@ -24,7 +24,7 @@ class LoginController extends Controller
 
         if ($validate && Hash::check($request->password, $validate->password)) {
             $request->session()->put('UserCheck', $validate->id);
-            return redirect('dashboard');
+            return redirect('home');
         }
 
         return back()->with([

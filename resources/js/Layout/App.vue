@@ -9,19 +9,19 @@ export default {
     items: [
       { title: 'Logout', href: '/logout', },
     ],
-    list: [
+    lists: [
         {
           title: 'Home',
-          value: 'home',
+          href: '/home',
         },
         {
           title: 'About Us',
-          value: 'about',
+          href: '/about',
         },
         {
           title: 'Contact Us',
-          value: 'contact',
-        },,
+          href: '#',
+        },
       ],
   }),
 
@@ -29,8 +29,10 @@ export default {
     mergeProps,
   },
 }
+
 </script>
 <template>
+  <Head :title="title ? `${title} - My App` : 'My App'"></Head>
   <main>
     <v-layout>
       <v-app-bar
@@ -39,23 +41,20 @@ export default {
       >
         <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-        <v-toolbar-title>Dashboard</v-toolbar-title>
+        <v-toolbar-title></v-toolbar-title>
 
         <v-spacer></v-spacer>
 
         <template v-slot:append>
           <v-menu>
             <template v-slot:activator="{ props: menu }">
-              <v-tooltip location="top">
-                <template v-slot:activator="{ props: tooltip }">
+              
                   <v-btn 
-                  icon="mdi-dots-vertical"
+                  icon="mdi-account"
                   v-bind="mergeProps(menu, tooltip)"
                   >
                   </v-btn>
-                </template>
-                <span>Expand</span>
-              </v-tooltip>
+                
             </template>
             <v-list>
               <v-list-item
@@ -75,9 +74,15 @@ export default {
         :location="$vuetify.display.mobile ? 'bottom' : undefined"
         temporary
       >
-        <v-list
-          :items="list"
-        ></v-list>
+        <v-list>
+          <v-list-item
+          v-for="(list, x) in lists"
+          :key="x"
+          :href="list.href"
+          >
+            <v-list-item-title>{{ list.title }}</v-list-item-title>
+          </v-list-item>
+        </v-list> 
       </v-navigation-drawer>
 
       <v-main style="height: 500px;">
