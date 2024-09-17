@@ -1,10 +1,9 @@
 <script setup>
     import { useForm } from '@inertiajs/vue3'
-
+    import AppHead from '../Layout/AppHead.vue'
     const form = useForm({
         email: null,
         password: null,
-        
     })
     function submit() {
         form.post('/loginPost', {
@@ -17,6 +16,7 @@
 
 </script>
 <template>
+    <AppHead title="Login" />
     <v-card
     class="mx-auto my-8"
     elevation="16"
@@ -66,8 +66,8 @@
 
                     <div class="d-flex flex-column justify-center">
                         <v-btn 
-                        type="submit" 
-                        :disabled="form.processing"
+                        type="submit"
+                        :loading="form.processing"
                         block>
                             Submit
                         </v-btn>

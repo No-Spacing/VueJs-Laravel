@@ -1,5 +1,7 @@
 <script setup>
     import { useForm } from '@inertiajs/vue3'
+    import AppHead from '../Layout/AppHead.vue'
+
     const form = useForm({
         name: null,
         email: null,
@@ -21,6 +23,7 @@
 </script>
 
 <template>
+    <AppHead title="Register" />
     <v-card
     class="mx-auto my-8"
     elevation="16"
@@ -71,7 +74,7 @@
                         <v-btn 
                         class="my-3" 
                         type="submit" 
-                        :disabled="form.processing"
+                        :loading="form.processing"
                         block>
                             Submit
                         </v-btn>
