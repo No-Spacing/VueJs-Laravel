@@ -10,6 +10,6 @@ class UserController extends Controller
 {
     public function home(){        
 
-        return Inertia::render('Home', ['auth.user' => User::where('id', session('UserCheck'))->first()]);
+        return Inertia::render('Home', ['user' => User::where('id', session('UserCheck'))->first()]);
     }
 }
