@@ -32,7 +32,6 @@ export default {
 
 </script>
 <template>
-  <Head :title="title ? `${title} - My App` : 'My App'"></Head>
   <main>
     <v-layout>
       <v-app-bar
@@ -51,7 +50,7 @@ export default {
               
                   <v-btn 
                   icon="mdi-account"
-                  v-bind="mergeProps(menu, tooltip)"
+                  v-bind="mergeProps(menu)"
                   >
                   </v-btn>
                 
