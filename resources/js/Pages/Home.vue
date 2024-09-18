@@ -6,7 +6,7 @@ import AppHead from '../Layout/AppHead.vue'
 
 const page = usePage()
 
-const user = computed(() => page.props.auth.user)
+const user = computed(() => page.props.user)
 
 defineOptions({ layout: Layout })
 </script>
