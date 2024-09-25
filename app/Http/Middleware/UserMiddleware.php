@@ -20,7 +20,7 @@ class UserMiddleware
         }   
 
         if(session()->has('UserCheck') && ($request->path() == 'login' && $request->path() != 'register')){
-            return redirect()->route('dashboard');
+            return redirect()->route('home');
         }
 
         return $next($request);
