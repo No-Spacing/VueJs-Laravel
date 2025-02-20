@@ -1,6 +1,10 @@
+Simple login, register page with middleware
+
 # VueJs-Laravel
- VUE V3.4.x, VUETIFY V3.6.x, INERTIAJS V1.x, LARAVEL V11.x
- Simple login, register page with middleware
+ 1. VUE V3.4.x,
+ 2. VUETIFY V3.6.x,
+ 3. INERTIAJS V1.x,
+ 4. LARAVEL V11.x
  
 # Setting up
  * composer update
